@@ -35,12 +35,11 @@ jobs:
           sed -i 's/\s\+/ /g' dns_hosts.txt
           sed -i 's/127.0.0.1/0.0.0.0/g' dns_hosts.txt
           sed -i 's/\s\+/ /g' ad_filter.txt
+          sed -i '/^!/d' dns_hosts.txt
+          sed -i '/^!/d' ad_filter
 
           cat dns_hosts.txt | sort | uniq > ./publish/DNS_HOSTS.TXT
           cat ad_filter.txt | sort | uniq > ./publish/AD_FILTER.TXT
-          
-          sed -i '/^[ \t!#*-./]/d' ./publish/DNS_HOSTS.TXT
-          sed -i '/^!/d' ./publish/AD_FILTER.TXT
           
       - name: Git push to master
         run: |
