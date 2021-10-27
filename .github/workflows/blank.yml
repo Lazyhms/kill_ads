@@ -35,10 +35,10 @@ jobs:
 
           mkdir -p publish;
 
-          cat dns_hosts.txt | sort -u > ./publish/DNS_HOSTS.TXT
-          cat ad_filter.txt | sort -u > ./publish/AD_FILTER.TXT
+          cat dns_hosts.txt | sort -u | uniq > ./publish/DNS_HOSTS.TXT
+          cat ad_filter.txt | sort -u | uniq > ./publish/AD_FILTER.TXT
           
-      - name: Git push to master
+      - name: Git push to release
         run: |
           cd publish || exit 1
           git init
@@ -50,10 +50,9 @@ jobs:
           git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
           git push -f origin release
           
-      - name: Purge jsdelivr cdn and remove file
+      - name: Purge jsdelivr cdn
         run: |
           cd publish || exit 1
           for file in $(ls); do
             curl "https://purge.jsdelivr.net/gh/${{ github.repository }}@release/${file}"
-            rm -f ${file}
           done
