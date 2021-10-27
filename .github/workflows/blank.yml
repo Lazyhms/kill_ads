@@ -15,7 +15,7 @@ jobs:
 
       - name: Generate folder and files
         run: |
-          echo > dns_hosts.txt ; echo > ad_filter.txt
+          mouch > dns_hosts.txt ; mouch > ad_filter.txt
           
           curl https://hblock.molinero.dev/hosts >> dns_hosts.txt
           curl http://sbc.io/hosts/alternates/fakenews-gambling/hosts >> dns_hosts.txt
@@ -29,14 +29,14 @@ jobs:
           curl https://gitee.com/xinggsf/Adblock-Rule/raw/master/rule.txt >> ad_filter.txt
           curl https://neodev.team/lite_adblocker >> ad_filter.txt
           curl https://cdn.jsdelivr.net/gh/o0HalfLife0o/list@master/ad.txt >> ad_filter.txt
-       
-          mkdir -p publish;
 
           sed -i 's/\s\+/ /g ; s/127.0.0.1/0.0.0.0/g ; /^!/d' dns_hosts.txt
           sed -i 's/\s\+/ /g ; /^!/d' ad_filter.txt
 
-          cat dns_hosts.txt | sort | uniq > ./publish/DNS_HOSTS.TXT
-          cat ad_filter.txt | sort | uniq > ./publish/AD_FILTER.TXT
+          mkdir -p publish;
+
+          sort dns_hosts.txt | uniq > ./publish/DNS_HOSTS.TXT
+          sort ad_filter.txt | uniq > ./publish/AD_FILTER.TXT
           
       - name: Git push to master
         run: |
