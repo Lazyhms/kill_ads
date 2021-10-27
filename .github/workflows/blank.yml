@@ -35,8 +35,8 @@ jobs:
 
           mkdir -p publish;
 
-          sort dns_hosts.txt | uniq && mv -f dns_hosts.txt ./publish/DNS_HOSTS.TXT
-          sort ad_filter.txt | uniq && mb -f ad_filter.txt ./publish/AD_FILTER.TXT
+          cat -i dns_hosts.txt | sort | uniq && mv -f dns_hosts.txt ./publish/DNS_HOSTS.TXT
+          cat -i ad_filter.txt | sort | uniq && mv -f ad_filter.txt ./publish/AD_FILTER.TXT
           
       - name: Git push to master
         run: |
