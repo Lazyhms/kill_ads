@@ -31,6 +31,10 @@ jobs:
           curl https://cdn.jsdelivr.net/gh/o0HalfLife0o/list@master/ad.txt >> ad_filter.txt
        
           mkdir -p publish;
+
+          sed -i 's/\s\+/ /g' dns_hosts.txt
+          sed -i 's/\s\+/ /g' ad_filter.txt
+
           cat dns_hosts.txt | sort | uniq > ./publish/DNS_HOSTS.TXT
           cat ad_filter.txt | sort | uniq > ./publish/AD_FILTER.TXT
           
