@@ -33,6 +33,7 @@ jobs:
           mkdir -p publish;
 
           sed -i 's/\s\+/ /g' dns_hosts.txt
+          sed -i 's/127.0.0.1/0.0.0.0/s' dns_hosts.txt
           sed -i 's/\s\+/ /g' ad_filter.txt
 
           cat dns_hosts.txt | sort | uniq > ./publish/DNS_HOSTS.TXT
