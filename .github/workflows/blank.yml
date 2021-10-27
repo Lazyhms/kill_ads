@@ -1,4 +1,4 @@
-name: Adguard dns and block Rules
+name: Adguard dns and block rules
 on:
   workflow_dispatch:
   schedule:
@@ -32,11 +32,8 @@ jobs:
        
           mkdir -p publish;
 
-          sed -i 's/\s\+/ /g' dns_hosts.txt
-          sed -i 's/127.0.0.1/0.0.0.0/g' dns_hosts.txt
-          sed -i 's/\s\+/ /g' ad_filter.txt
-          sed -i '/^!/d' dns_hosts.txt
-          sed -i '/^!/d' ad_filter
+          sed -i 's/\s\+/ /g ; s/127.0.0.1/0.0.0.0/g ; /^!/d' dns_hosts.txt
+          sed -i 's/\s\+/ /g ; /^!/d' ad_filter.txt
 
           cat dns_hosts.txt | sort | uniq > ./publish/DNS_HOSTS.TXT
           cat ad_filter.txt | sort | uniq > ./publish/AD_FILTER.TXT
