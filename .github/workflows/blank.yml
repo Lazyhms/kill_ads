@@ -15,7 +15,7 @@ jobs:
 
       - name: Generate folder and files
         run: |
-          mouch > dns_hosts.txt ; mouch > ad_filter.txt
+          touch dns_hosts.txt ad_filter.txt
           
           curl https://hblock.molinero.dev/hosts >> dns_hosts.txt
           curl http://sbc.io/hosts/alternates/fakenews-gambling/hosts >> dns_hosts.txt
