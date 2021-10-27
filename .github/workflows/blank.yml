@@ -1,0 +1,58 @@
+name: Adguard dns and block Rules
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 21 * * *"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set variables
+        run: |
+          echo "RELEASE_NAME=Released on $(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+          echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Generate folder and files
+        run: |
+          echo > dns_hosts.txt ; echo > ad_filter.txt
+          
+          curl https://hblock.molinero.dev/hosts >> dns_hosts.txt
+          curl http://sbc.io/hosts/alternates/fakenews-gambling/hosts >> dns_hosts.txt
+          curl https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt >> dns_hosts.txt
+          curl https://cdn.jsdelivr.net/gh/Goooler/1024_hosts@master/hosts >> dns_hosts.txt
+          curl https://cdn.jsdelivr.net/gh/tekintian/hosts_ads_block@master/mobile/hosts >> dns_hosts.txt
+          curl https://adaway.org/hosts.txt >> dns_hosts.txt
+          curl https://neodev.team/lite_host >> dns_hosts.txt 
+          
+          curl https://banbendalao.coding.net/p/adgk/d/ADgk/git/raw/master/ADgk.txt >> ad_filter.txt
+          curl https://gitee.com/xinggsf/Adblock-Rule/raw/master/rule.txt >> ad_filter.txt
+          curl https://neodev.team/lite_adblocker >> ad_filter.txt
+          curl https://cdn.jsdelivr.net/gh/o0HalfLife0o/list@master/ad.txt >> ad_filter.txt
+       
+          mkdir -p publish;
+          cat dns_hosts.txt | sort | uniq > ./publish/DNS_HOSTS.TXT
+          cat ad_filter.txt | sort | uniq > ./publish/AD_FILTER.TXT
+          
+          sed -i '/^[ \t!#*-./]/d' ./publish/DNS_HOSTS.TXT
+          sed -i '/^!/d' ./publish/AD_FILTER.TXT
+          
+      - name: Git push to master
+        run: |
+          cd publish || exit 1
+          git init
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b release
+          git add .
+          git commit -m "${{ env.RELEASE_NAME }}"
+          git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+          git push -f origin release
+          
+      - name: Purge jsdelivr cdn and remove file
+        run: |
+          cd publish || exit 1
+          for file in $(ls); do
+            curl "https://purge.jsdelivr.net/gh/${{ github.repository }}@release/${file}"
+            rm -f ${file}
+          done
