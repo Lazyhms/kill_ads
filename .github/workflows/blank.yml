@@ -35,8 +35,8 @@ jobs:
 
           mkdir -p publish;
 
-          cat dns_hosts.txt | sort -u | uniq > ./publish/DNS_HOSTS.TXT
-          cat ad_filter.txt | sort -u | uniq > ./publish/AD_FILTER.TXT
+          cat dns_hosts.txt | sort -u | awk '!a[$0]++' > ./publish/DNS_HOSTS.TXT
+          cat ad_filter.txt | sort -u | awk '!a[$0]++' > ./publish/AD_FILTER.TXT
           
       - name: Git push to release
         run: |
