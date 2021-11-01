@@ -2,7 +2,7 @@ name: Adguard dns and block rules
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 23 * * *"
+    - cron: "0 0 * * *"
 jobs:
   build:
     runs-on: ubuntu-latest
