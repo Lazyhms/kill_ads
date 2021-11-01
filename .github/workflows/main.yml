@@ -30,7 +30,7 @@ jobs:
           curl https://neodev.team/lite_adblocker >> ad_filter.txt
           curl https://cdn.jsdelivr.net/gh/o0HalfLife0o/list@master/ad.txt >> ad_filter.txt
 
-          sed -i 's/\s\+/ /g ; /^!/d ; s/^[ \t]*//g ; s/[ \t]*$//g' dns_hosts.txt
+          sed -i 's/\s\+/ /g ; s/127.0.0.1/0.0.0.0/g ; /^!/d ; s/^[ \t]*//g ; s/[ \t]*$//g' dns_hosts.txt
           sed -i 's/\s\+/ /g ; /^!/d' ad_filter.txt
 
           mkdir -p publish;
