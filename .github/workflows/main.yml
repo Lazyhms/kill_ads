@@ -32,8 +32,8 @@ jobs:
           
           mkdir -p publish;
 
-          cat dns_hosts.txt > ./publish/dns.txt
-          cat ad_filter.txt > ./publish/ad.txt
+          cat dns_hosts.txt | sort -u | awk '!a[$0]++' > ./publish/dns.txt
+          cat ad_filter.txt | sort -u | awk '!a[$0]++' > ./publish/ad.txt
 
           sed -i 's/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ; s/127.0.0.1/0.0.0.0/g ; /^[!#*-./]/d' dns_hosts.txt
           sed -i 's/\s\+/ /g ; /^!/d' ad_filter.txt
