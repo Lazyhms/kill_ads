@@ -30,6 +30,8 @@ jobs:
           curl https://neodev.team/lite_adblocker >> ad_filter.txt
           curl https://cdn.jsdelivr.net/gh/o0HalfLife0o/list@master/ad.txt >> ad_filter.txt
           
+          mkdir -p publish;
+
           cat dns_hosts.txt > ./publish/dns.txt
           cat ad_filter.txt > ./publish/ad.txt
 
