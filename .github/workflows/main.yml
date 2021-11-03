@@ -29,13 +29,8 @@ jobs:
           curl https://gitee.com/xinggsf/Adblock-Rule/raw/master/rule.txt >> ad_filter.txt
           curl https://neodev.team/lite_adblocker >> ad_filter.txt
           curl https://cdn.jsdelivr.net/gh/o0HalfLife0o/list@master/ad.txt >> ad_filter.txt
-          
-          mkdir -p publish;
 
-          cat dns_hosts.txt | sort -u | awk '!a[$0]++' > ./publish/dns.txt
-          cat ad_filter.txt | sort -u | awk '!a[$0]++' > ./publish/ad.txt
-
-          sed -i 's/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ; s/127.0.0.1/0.0.0.0/g ; /^[!#*-./]/d' dns_hosts.txt
+          sed -i '/^[\/0.0.0.0\/||@@]/!d' dns_hosts.txt     
           sed -i 's/\s\+/ /g ; /^!/d' ad_filter.txt
 
           mkdir -p publish;
