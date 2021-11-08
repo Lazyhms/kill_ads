@@ -1,6 +1,6 @@
 # kill_ads
 
-## Update and merge every day at 5 am.
+## Update and merge every day at 8 am.
 
 | Sub url | |
 | ------ | ------ |
