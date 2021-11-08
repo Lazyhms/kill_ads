@@ -18,8 +18,8 @@ jobs:
                 git init
                 git config --local user.name "github-actions[bot]"
                 git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-                git checkout -b master
+                git checkout -b rules
                 git add .
                 git commit
                 git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
-                git push -f origin master
+                git push -f origin rules
