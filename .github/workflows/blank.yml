@@ -13,13 +13,17 @@ jobs:
           echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
         shell: bash
 
+      - name: s
+        run: |
+          touch global.txt
+    
       - name: Git push to release
         run: |
                 git init
                 git config --local user.name "github-actions[bot]"
                 git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-                git checkout -b rules
+                git checkout -b master
                 git add .
                 git commit
                 git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
-                git push -f origin rules
+                git push -f origin master
