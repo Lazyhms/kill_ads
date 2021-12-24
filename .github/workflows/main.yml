@@ -16,6 +16,8 @@ jobs:
       - name: Generate folder and files
         run: |
           echo -e '@@||edge.activity.windows.com^$important'|tee dns_hosts.txt ad_filter.txt
+          echo '0.0.0.0 mbdp02.bdstatic.com' >> dns_hosts.txt
+          echo '0.0.0.0 mbd.baidu.com' >> dns_hosts.txt
           
           curl https://hblock.molinero.dev/hosts >> dns_hosts.txt
           curl http://sbc.io/hosts/alternates/fakenews-gambling/hosts >> dns_hosts.txt
