@@ -1,0 +1,8 @@
+||mbdp02.bdstatic.com
+zhihu.com##div.Card.DownloadGuide
+||zhihu.com/lastread/touch$important
+||zhihu.com/sc-profiler$important
+||zhihu.com/api/v4/commercial/ecommerce$important
+||www.zhihu.com/api/v4/commercial/ecommerce$important
+||www.zhihu.com/api/v4/hot_recommendation^$important
+||zhihu.com/api/v3/feed/topstory/recommend?*$replace=/"type\":\"answer\"/\"type\":\"article\"/
