@@ -25,6 +25,7 @@ jobs:
           curl https://adaway.org/hosts.txt >> dns_hosts.txt
           curl https://neodev.team/lite_host >> dns_hosts.txt 
           
+          curl https://raw.githubusercontent.com/Lazyhms/kill_ads/main/AD_FILTER.TXT >> ad_filter.TXT
           curl https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt >> ad_filter.txt
           curl https://gitee.com/xinggsf/Adblock-Rule/raw/master/rule.txt >> ad_filter.txt
           curl https://neodev.team/lite_adblocker >> ad_filter.txt
