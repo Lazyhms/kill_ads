@@ -1,3 +1,4 @@
+@@||edge.activity.windows.com^$important
 ||mbdp02.bdstatic.com
 zhihu.com##div.Card.DownloadGuide
 ||zhihu.com/lastread/touch$important
