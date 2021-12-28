@@ -1,1 +1,2 @@
+@@||edge.activity.windows.com^$important
 ||mbdp02.bdstatic.com
