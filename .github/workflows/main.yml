@@ -15,8 +15,9 @@ jobs:
 
       - name: Generate folder and files
         run: |
-          echo -e '@@||edge.activity.windows.com^$important'|tee dns_hosts.txt ad_filter.txt
+          #echo -e '@@||edge.activity.windows.com^$important'|tee dns_hosts.txt ad_filter.txt
           
+          curl https://raw.githubusercontent.com/Lazyhms/kill_ads/main/DNS_HOSTS.TXT  > dns_hosts.txt
           curl https://hblock.molinero.dev/hosts >> dns_hosts.txt
           curl http://sbc.io/hosts/alternates/fakenews-gambling/hosts >> dns_hosts.txt
           curl https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt >> dns_hosts.txt
@@ -25,7 +26,7 @@ jobs:
           curl https://adaway.org/hosts.txt >> dns_hosts.txt
           curl https://neodev.team/lite_host >> dns_hosts.txt 
           
-          curl https://raw.githubusercontent.com/Lazyhms/kill_ads/main/AD_FILTER.TXT >> ad_filter.txt
+          curl https://raw.githubusercontent.com/Lazyhms/kill_ads/main/AD_FILTER.TXT > ad_filter.txt
           curl https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt >> ad_filter.txt
           curl https://gitee.com/xinggsf/Adblock-Rule/raw/master/rule.txt >> ad_filter.txt
           curl https://neodev.team/lite_adblocker >> ad_filter.txt
