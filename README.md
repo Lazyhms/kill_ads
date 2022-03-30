@@ -2,12 +2,32 @@
 
 ## Update and merge every day at 8 am.
 
-| Sub url | |
-| ------ | ------ |
-| AD | https://cdn.jsdelivr.net/gh/Lazyhms/kill_ads@release/AD_FILTER.TXT | 
-| DNS | https://cdn.jsdelivr.net/gh/Lazyhms/kill_ads@release/DNS_HOSTS.TXT | 
+## Sub
 
-## DNS source
+<table>
+  <tr>
+    <td rowspan="3">AD</td>
+    <td>https://raw.githubusercontent.com/Lazyhms/kill_ads/release/AD_FILTER.TXT</td>
+  </tr>
+  <tr>
+    <td>https://raw.fastgit.org/Lazyhms/kill_ads/release/AD_FILTER.TXT</td>
+  </tr>
+  <tr>
+    <td>https://fastly.jsdelivr.net/gh/Lazyhms/kill_ads@release/AD_FILTER.TXT</td>
+  </tr>
+    <tr>
+    <td rowspan="3">DNS</td>
+    <td>https://raw.githubusercontent.com/Lazyhms/kill_ads/release/DNS_HOSTS.TXT</td>
+  </tr>
+  <tr>
+    <td>https://raw.fastgit.org/Lazyhms/kill_ads/release/DNS_HOSTS.TXT</td>
+  </tr>
+  <tr>
+    <td>https://fastly.jsdelivr.net/gh/Lazyhms/kill_ads@release/DNS_HOSTS.TXT</td>
+  </tr>
+</table>
+
+## DNS Source
 
 1. https://hblock.molinero.dev/hosts
 2. http://sbc.io/hosts/alternates/fakenews-gambling/hosts
@@ -17,9 +37,10 @@
 6. https://adaway.org/hosts.txt
 7. https://neodev.team/lite_host
 
-## AD source
+## AD Source
 
 1. https://banbendalao.coding.net/p/adgk/d/ADgk/git/raw/master/ADgk.txt
 2. https://gitee.com/xinggsf/Adblock-Rule/raw/master/rule.txt
 3. https://neodev.team/lite_adblocker
 4. https://cdn.jsdelivr.net/gh/o0HalfLife0o/list@master/ad.txt
+5. https://raw.githubusercontent.com/DoingDog/XXKiller/main/w.txt
