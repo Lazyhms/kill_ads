@@ -35,7 +35,7 @@ jobs:
           curl https://raw.iqiq.io/notracking/hosts-blocklists/master/adblock/adblock.txt >> ad_filter.txt
           
           sed -i "s/127.0.0.1/0.0.0.0/g ; s/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ; /^[||\b@@\b0.0.0.0]/!d ; /^[.]/d" dns_hosts.txt
-          sed -i "/|$/d ;" dns_hosts.txt
+          sed -i "/|$/d ; /^[\b<@\b<@-]/d" dns_hosts.txt
           
           sed -i 's/\s\+/ /g ; /^[!！]/d' ad_filter.txt
 
