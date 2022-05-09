@@ -40,7 +40,8 @@
 ## AD Source
 
 1. https://banbendalao.coding.net/p/adgk/d/ADgk/git/raw/master/ADgk.txt
-2. https://gitee.com/xinggsf/Adblock-Rule/raw/master/rule.txt
-3. https://neodev.team/lite_adblocker
-4. https://cdn.jsdelivr.net/gh/o0HalfLife0o/list@master/ad.txt
-5. https://raw.githubusercontent.com/DoingDog/XXKiller/main/w.txt
+2. https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt
+3. https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt
+4. https://neodev.team/lite_adblocker
+5. https://cdn.jsdelivr.net/gh/o0HalfLife0o/list@master/ad.txt
+6. https://raw.githubusercontent.com/DoingDog/XXKiller/main/w.txt
