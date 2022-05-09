@@ -30,12 +30,12 @@
 ## DNS Source
 
 1. https://hblock.molinero.dev/hosts
-2. http://sbc.io/hosts/alternates/fakenews-gambling/hosts
-3. https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-4. https://cdn.jsdelivr.net/gh/Goooler/1024_hosts@master/hosts
-5. https://cdn.jsdelivr.net/gh/tekintian/hosts_ads_block@master/mobile/hosts
-6. https://adaway.org/hosts.txt
-7. https://neodev.team/lite_host
+3. http://sbc.io/hosts/alternates/fakenews-gambling-social/hosts
+4. https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+5. https://cdn.jsdelivr.net/gh/Goooler/1024_hosts@master/hosts
+6. https://cdn.jsdelivr.net/gh/tekintian/hosts_ads_block@master/mobile/hosts
+7. https://adaway.org/hosts.txt
+8. https://neodev.team/lite_host
 
 ## AD Source
 
