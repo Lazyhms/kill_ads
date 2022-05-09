@@ -19,7 +19,7 @@ jobs:
           
           curl https://raw.githubusercontent.com/Lazyhms/kill_ads/main/dns_hosts  > dns_hosts.txt
           curl https://hblock.molinero.dev/hosts >> dns_hosts.txt
-          curl http://sbc.io/hosts/alternates/fakenews-gambling/hosts >> dns_hosts.txt
+          curl http://sbc.io/hosts/alternates/fakenews-gambling-social/hosts >> dns_hosts.txt
           curl https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt >> dns_hosts.txt
           curl https://cdn.jsdelivr.net/gh/Goooler/1024_hosts@master/hosts >> dns_hosts.txt
           curl https://cdn.jsdelivr.net/gh/tekintian/hosts_ads_block@master/mobile/hosts >> dns_hosts.txt
