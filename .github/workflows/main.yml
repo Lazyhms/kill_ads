@@ -31,7 +31,9 @@ jobs:
           curl https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt >> ad_filter.txt
           curl https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt >> ad_filter.txt
           curl https://neodev.team/lite_adblocker >> ad_filter.txt
+          curl https://cdn.jsdelivr.net/gh/o0HalfLife0o/list@master/ad.txt >> ad_filter.txt
           curl https://raw.githubusercontent.com/DoingDog/XXKiller/main/w.txt >> ad_filter.txt
+          curl https://raw.iqiq.io/notracking/hosts-blocklists/master/adblock/adblock.txt >> ad_filter.txt
           
           sed -i "s/127.0.0.1/0.0.0.0/g ; s/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ; /^[||\b@@\b0.0.0.0]/!d ; /^[.]/d" dns_hosts.txt
           sed -i 's/\s\+/ /g ; /^[!！]/d' ad_filter.txt
