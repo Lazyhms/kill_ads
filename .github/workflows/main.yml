@@ -32,7 +32,7 @@ jobs:
           curl https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt >> ad_filter.txt
           curl https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt >> ad_filter.txt
           curl https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt >> ad_filter.txt
-          curl https://cdn.jsdelivr.net/gh/o0HalfLife0o/list@master/ad.txt >> ad_filter.txt
+          curl https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt >> ad_filter.txt
           curl https://raw.githubusercontent.com/notracking/hosts-blocklists/master/adblock/adblock.txt >> ad_filter.txt
           
           sed -i "s/127.0.0.1/0.0.0.0/g ; s/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ; /^[||\b@@\b0.0.0.0]/!d ; /^[.]/d" dns_hosts.txt
