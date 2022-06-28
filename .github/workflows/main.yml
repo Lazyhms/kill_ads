@@ -33,6 +33,8 @@ jobs:
           curl https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt >> ad_filter.txt
           curl https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_adblocker >> ad_filter.txt
           curl https://raw.githubusercontent.com/notracking/hosts-blocklists/master/adblock/adblock.txt >> ad_filter.txt
+          curl https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/whitelist.txt >> ad_filter.txt
+          curl https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt >> ad_filter.txt
           # curl https://raw.githubusercontent.com/DoingDog/XXKiller/main/w.txt >> ad_filter.txt
           
           sed -i "s/127.0.0.1/0.0.0.0/g ; s/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ; /^[||\b@@\b0.0.0.0]/!d ; /^[.]/d" dns_hosts.txt
