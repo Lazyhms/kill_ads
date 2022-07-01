@@ -1,5 +1,6 @@
-||mbdp02.bdstatic.com^$important
-||access1.tpns.tencent.com^$important
+0.0.0.0 getui.com
+0.0.0.0 mbdp02.bdstatic.com^$important
+0.0.0.0 access1.tpns.tencent.com^$important
 
 @@||shopping.ele.me^$important
 @@||alsc-buy2.ele.me^$important
