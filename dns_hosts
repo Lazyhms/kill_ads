@@ -1,8 +1,9 @@
 0.0.0.0 getui.com
+0.0.0.0 tpns.tencent.com
 0.0.0.0 mbdp02.bdstatic.com
 0.0.0.0 access1.tpns.tencent.com
 
-@@||shopping.ele.me^$important
-@@||alsc-buy2.ele.me^$important
-@@||waimai-guide.ele.me^$important
-@@||edge.activity.windows.com^$important
+@@||shopping.ele.me
+@@||alsc-buy2.ele.me
+@@||waimai-guide.ele.me
+@@||edge.activity.windows.com
