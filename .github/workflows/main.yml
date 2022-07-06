@@ -20,7 +20,7 @@ jobs:
           # 创建文件
           touch dns_hosts.txt ad_filter.txt
           # dns集合
-          dnss = (
+          dnss=(
              https://hblock.molinero.dev/hosts
              https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts
              https://raw.githubusercontent.com/Goooler/1024_hosts/master/hosts
@@ -38,7 +38,7 @@ jobs:
           done
           
           # ad集合
-          ads = (
+          ads=(
             https://hblock.molinero.dev/hosts_adblock.txt
             https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt
             https://raw.githubusercontent.com/Lazyhms/kill_ads/main/ad_filter
