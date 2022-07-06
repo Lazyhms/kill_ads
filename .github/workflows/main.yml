@@ -20,7 +20,7 @@ jobs:
           # 创建文件
           touch dns_hosts.txt ad_filter.txt
           # dns集合
-          dnss=(
+          dns=(
              https://hblock.molinero.dev/hosts
              https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts
              https://raw.githubusercontent.com/Goooler/1024_hosts/master/hosts
@@ -33,12 +33,12 @@ jobs:
              https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-social/hosts
           )
           # 遍历dns集合并写入文件
-          for dns in ${dnss[@]}; do
-            curl dns >> dns_hosts.txt
+          for i in ${dns[@]}; do
+            curl i >> dns_hosts.txt
           done
           
           # ad集合
-          ads=(
+          ad=(
             https://hblock.molinero.dev/hosts_adblock.txt
             https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt
             https://raw.githubusercontent.com/Lazyhms/kill_ads/main/ad_filter
@@ -53,8 +53,8 @@ jobs:
             # https://raw.githubusercontent.com/DoingDog/XXKiller/main/w.txt
           )
           # 遍历ad集合并写入文件
-          for ad in ${ads[@]}; do
-            curl ad >> ad_filter.txt
+          for i in ${ad[@]}; do
+            curl i >> ad_filter.txt
           done
           
           # 替换删除
