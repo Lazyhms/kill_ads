@@ -17,36 +17,54 @@ jobs:
         run: |
           #echo -e '@@||edge.activity.windows.com^$important'|tee dns_hosts.txt ad_filter.txt
           
-          curl https://hblock.molinero.dev/hosts > dns_hosts.txt
-          curl https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts >> dns_hosts.txt
-          curl https://raw.githubusercontent.com/Goooler/1024_hosts/master/hosts >> dns_hosts.txt
-          curl https://raw.githubusercontent.com/Lazyhms/kill_ads/main/dns_hosts >> dns_hosts.txt
-          curl https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt >> dns_hosts.txt
-          curl https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host >> dns_hosts.txt
-          curl https://www.kbsml.com/wp-content/uploads/adblock/adguard/adg-kall-dns.txt >> dns_hosts.txt
-          curl https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt >> dns_hosts.txt
-          curl https://raw.githubusercontent.com/tekintian/hosts_ads_block/master/mobile/hosts >> dns_hosts.txt
-          curl https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-social/hosts >> dns_hosts.txt
-
-          curl https://hblock.molinero.dev/hosts_adblock.txt > ad_filter.txt
-          curl https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt >> ad_filter.txt
-          curl https://raw.githubusercontent.com/Lazyhms/kill_ads/main/ad_filter >> ad_filter.txt
-          curl https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt >> ad_filter.txt
-          curl https://www.kbsml.com/wp-content/uploads/adblock/adguard/adg-kall.txt >> ad_filter.txt
-          curl https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt >> ad_filter.txt
-          curl https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt >> ad_filter.txt
-          curl https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_adblocker >> ad_filter.txt
-          curl https://raw.githubusercontent.com/notracking/hosts-blocklists/master/adblock/adblock.txt >> ad_filter.txt
-          curl https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/whitelist.txt >> ad_filter.txt
-          curl https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt >> ad_filter.txt
-          # curl https://raw.githubusercontent.com/DoingDog/XXKiller/main/w.txt >> ad_filter.txt
+          # 创建文件
+          touch dns_hosts.txt ad_filter.txt
+          # dns集合
+          dnss = (
+             https://hblock.molinero.dev/hosts
+             https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts
+             https://raw.githubusercontent.com/Goooler/1024_hosts/master/hosts
+             https://raw.githubusercontent.com/Lazyhms/kill_ads/main/dns_hosts
+             https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+             https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host
+             https://www.kbsml.com/wp-content/uploads/adblock/adguard/adg-kall-dns.txt
+             https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt
+             https://raw.githubusercontent.com/tekintian/hosts_ads_block/master/mobile/hosts
+             https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-social/hosts
+          )
+          # 遍历dns集合并写入文件
+          for dns in ${dnss[@]}; do
+            curl dns >> dns_hosts.txt
+          done
           
+          # ad集合
+          ads = (
+            https://hblock.molinero.dev/hosts_adblock.txt
+            https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt
+            https://raw.githubusercontent.com/Lazyhms/kill_ads/main/ad_filter
+            https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
+            https://www.kbsml.com/wp-content/uploads/adblock/adguard/adg-kall.txt
+            https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt
+            https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt
+            https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_adblocker
+            https://raw.githubusercontent.com/notracking/hosts-blocklists/master/adblock/adblock.txt
+            https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/whitelist.txt
+            https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt
+            # https://raw.githubusercontent.com/DoingDog/XXKiller/main/w.txt
+          )
+          # 遍历ad集合并写入文件
+          for ad in ${ads[@]}; do
+            curl ad >> ad_filter.txt
+          done
+          
+          # 替换删除
           sed -i "s/127.0.0.1/0.0.0.0/g ; s/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ; /^[||\b@@\b0.0.0.0]/!d ; /^[.]/d" dns_hosts.txt
           sed -i 's/\s\+/ /g ; /^[!！]/d' ad_filter.txt
           sed -i '/^@@||163.com^$important/d' ad_filter.txt
-
+          
+          # 创建publish文件夹
           mkdir -p publish;
-
+          # 排序去重
           cat dns_hosts.txt | sort -u | awk '!a[$0]++' > ./publish/DNS_HOSTS.TXT
           cat ad_filter.txt | sort -u | awk '!a[$0]++' > ./publish/AD_FILTER.TXT
           
