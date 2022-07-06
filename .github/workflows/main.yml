@@ -34,7 +34,7 @@ jobs:
           )
           # 遍历dns集合并写入文件
           for i in ${dns[@]}; do
-            curl i >> dns_hosts.txt
+            curl $i >> dns_hosts.txt
           done
           
           # ad集合
@@ -54,7 +54,7 @@ jobs:
           )
           # 遍历ad集合并写入文件
           for i in ${ad[@]}; do
-            curl i >> ad_filter.txt
+            curl $i >> ad_filter.txt
           done
           
           # 替换删除
