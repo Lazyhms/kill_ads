@@ -7,6 +7,16 @@
 0.0.0.0 logapi-and.zhipin.com
 0.0.0.0 access1.tpns.tencent.com
 
+0.0.0.0 dldir1v6.qq.com
+0.0.0.0 game.weixin.qq.com
+0.0.0.0 qqdata.ab.qq.com
+0.0.0.0 rmonitor.qq.com
+0.0.0.0 cc.map.qq.com
+0.0.0.0 analytics.map.qq.com
+0.0.0.0 bkvv.video.qq.com
+0.0.0.0 amdc.m.youku.com
+0.0.0.0 pss.alicdn.com
+
 @@||shopping.ele.me
 @@||alsc-buy2.ele.me
 @@||waimai-guide.ele.me
