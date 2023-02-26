@@ -47,7 +47,6 @@ jobs:
             https://raw.githubusercontent.com/notracking/hosts-blocklists/master/adblock/adblock.txt
             https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/whitelist.txt
             https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt
-            # https://raw.githubusercontent.com/DoingDog/XXKiller/main/w.txt
           )
           # 遍历ad集合并写入文件
           for i in ${ad[@]}; do
