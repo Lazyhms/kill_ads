@@ -40,7 +40,7 @@ jobs:
           # ad集合
           ad=(
             https://hblock.molinero.dev/hosts_adblock.txt
-            https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt
+          # https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt
           # https://raw.githubusercontent.com/Lazyhms/kill_ads/main/ad_filter
             https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
             https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt
