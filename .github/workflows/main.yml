@@ -25,7 +25,7 @@ jobs:
              https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts
              https://raw.githubusercontent.com/Goooler/1024_hosts/master/hosts
              https://raw.githubusercontent.com/Lazyhms/kill_ads/main/dns_hosts
-             https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+           # https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
              https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host
              https://www.kbsml.com/wp-content/uploads/adblock/adguard/adg-kall-dns.txt
              https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt
@@ -45,7 +45,7 @@ jobs:
             https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
             https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt
             https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt
-            https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_adblocker
+          # https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_adblocker
             https://raw.githubusercontent.com/notracking/hosts-blocklists/master/adblock/adblock.txt
             https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/whitelist.txt
             https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt
