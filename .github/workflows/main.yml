@@ -21,40 +21,40 @@ jobs:
           touch dns_hosts.txt ad_filter.txt
           # dns集合
           dns=(
-           # https://hblock.molinero.dev/hosts
+             https://hblock.molinero.dev/hosts
              https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts
              https://raw.githubusercontent.com/Goooler/1024_hosts/master/hosts
              https://raw.githubusercontent.com/Lazyhms/kill_ads/main/dns_hosts
              https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-           # https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host
+             https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host
              https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt
              https://raw.githubusercontent.com/tekintian/hosts_ads_block/master/mobile/hosts
-           # https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-social/hosts
+             https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-social/hosts
           )
 
           echo "遍历dns集合并写入文件"
           for i in ${dns[@]}; do
             echo $i
-            curl -H "Accept-Encoding: gzip" $i | gunzip | more >> dns_hosts.txt
+            curl -H "Accept-Encoding: gzip" $i >> dns_hosts.txt
           done
           
           # ad集合
           ad=(
-           # https://hblock.molinero.dev/hosts_adblock.txt
+            https://hblock.molinero.dev/hosts_adblock.txt
             https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt
             https://raw.githubusercontent.com/Lazyhms/kill_ads/main/ad_filter
             https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
             https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt
             https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt
-          # https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_adblocker
-          # https://raw.githubusercontent.com/notracking/hosts-blocklists/master/adblock/adblock.txt
+            https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_adblocker
+            https://raw.githubusercontent.com/notracking/hosts-blocklists/master/adblock/adblock.txt
             https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt
           )
           
           echo "遍历ad集合并写入文件"
           for i in ${ad[@]}; do
             echo $i
-            curl -H "Accept-Encoding: gzip" $i | gunzip | more >> ad_filter.txt
+            curl -H "Accept-Encoding: gzip" $i >> ad_filter.txt
           done
           
           # 替换删除
