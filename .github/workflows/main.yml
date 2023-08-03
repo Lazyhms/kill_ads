@@ -35,6 +35,7 @@ jobs:
 
           echo "遍历dns集合并写入文件"
           for i in ${dns[@]}; do
+            echo $i
             curl -H "Accept-Encoding: gzip" $i | gunzip | more >> dns_hosts.txt
           done
           
@@ -53,6 +54,7 @@ jobs:
           
           echo "遍历ad集合并写入文件"
           for i in ${ad[@]}; do
+            echo $i
             curl -H "Accept-Encoding: gzip" $i | gunzip | more >> ad_filter.txt
           done
           
