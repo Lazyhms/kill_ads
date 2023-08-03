@@ -27,7 +27,6 @@ jobs:
              https://raw.githubusercontent.com/Lazyhms/kill_ads/main/dns_hosts
              https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
            # https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host
-             https://www.kbsml.com/wp-content/uploads/adblock/adguard/adg-kall-dns.txt
              https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt
              https://raw.githubusercontent.com/tekintian/hosts_ads_block/master/mobile/hosts
            # https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-social/hosts
