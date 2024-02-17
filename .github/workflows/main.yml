@@ -58,8 +58,8 @@ jobs:
           done
           
           # 替换删除
-          sed -i 's/\s\+/ /g ;' dns_hosts.txt
-          sed -i 's/\s\+/ /g ;' ad_filter.txt
+          sed -i "s/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ; /^[||\b@@\b0.0.0.0]/!d ; /^[.]/d" dns_hosts.txt
+          sed -i 's/\s\+/ /g ; /^[!！]/d' ad_filter.txt
           
           # 创建publish文件夹
           mkdir -p publish;
