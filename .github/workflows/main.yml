@@ -58,14 +58,14 @@ jobs:
           done
           
           # 替换删除
-          sed -i "s/127.0.0.1/0.0.0.0/g ; s/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ; /^[||\b@@\b0.0.0.0]/!d ; /^[.]/d" dns_hosts.txt
-          sed -i 's/\s\+/ /g ; /^[!！]/d' ad_filter.txt
+          sed -i 's/\s\+/ /g ;' dns_hosts.txt
+          sed -i 's/\s\+/ /g ;' ad_filter.txt
           
           # 创建publish文件夹
           mkdir -p publish;
           # 排序去重
-          cat dns_hosts.txt | sort -u | uniq > ./publish/DNS_HOSTS.TXT
-          cat ad_filter.txt | sort -u | uniq > ./publish/AD_FILTER.TXT
+          $cat dns_hosts.txt | sort -u | uniq > ./publish/DNS_HOSTS.TXT
+          $cat ad_filter.txt | sort -u | uniq > ./publish/AD_FILTER.TXT
           
       - name: Git push to release
         run: |
