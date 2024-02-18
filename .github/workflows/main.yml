@@ -64,8 +64,8 @@ jobs:
           # 创建publish文件夹
           mkdir -p publish;
           # 排序去重
-          sort dns_hosts.txt | uniq > ./publish/DNS_HOSTS.TXT
-          sort ad_filter.txt | uniq > ./publish/AD_FILTER.TXT
+          sort -u dns_hosts.txt | uniq > ./publish/DNS_HOSTS.TXT
+          sort -u ad_filter.txt | uniq > ./publish/AD_FILTER.TXT
           
       - name: Git push to release
         run: |
