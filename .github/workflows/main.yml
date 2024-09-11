@@ -65,7 +65,7 @@ jobs:
           mkdir -p publish;
           # 排序去重
           sort -u dns_hosts.txt | uniq > ./publish/dns.txt
-          sort -u ad_filter.txt | uniq > ./publish/ad.txt
+          sort -u ad_filter.txt | uniq > ./publish/bad.txt
           
       - name: Git push to release
         run: |
