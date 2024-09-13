@@ -51,13 +51,17 @@ jobs:
             curl -H "Accept-Encoding: gzip" $i | gunzip | more  >> ad_filter.txt
           done
           
-          echo "创建publish文件夹"
-          mkdir -p publish;
-
           # 替换删除
-          sed -i "s/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ;" dns_hosts.txt > ./publish/adblock.txt
-          sed -i "s/127.0.0.1/0.0.0.0/g ; s/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ;" ad_filter.txt > ./publish/hosts.txt
+          sed -i "s/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ;" dns_hosts.txt
+          sed -i "s/127.0.0.1/0.0.0.0/g ; s/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ;" ad_filter.txt
+
+          echo 创建publish文件夹
+          mkdir -p publish;
           
+          # 排序去重
+          mv -f dns_hosts.txt /publish/hosts.txt
+          mv -f ad_filter.txt /publish/adblock.txt
+
       - name: Git push to release
         run: |
           cd publish || exit 1
