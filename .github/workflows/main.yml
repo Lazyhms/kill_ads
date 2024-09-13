@@ -20,15 +20,11 @@ jobs:
           
           # dns集合
           dns=(
-             https://hblock.molinero.dev/hosts
              https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts
              https://raw.githubusercontent.com/Goooler/1024_hosts/master/hosts
              https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-             https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host
              https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt
-             https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_adblocker
              https://raw.githubusercontent.com/tekintian/hosts_ads_block/master/mobile/hosts
-             https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-social/hosts
           )
 
           echo "遍历dns集合并写入文件"
