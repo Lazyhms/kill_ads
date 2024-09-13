@@ -15,8 +15,6 @@ jobs:
 
       - name: Generate folder and files
         run: |
-          #echo -e '@@||edge.activity.windows.com^$important'|tee dns_hosts.txt ad_filter.txt
-          
           # 创建文件
           touch dns_hosts.txt ad_filter.txt
           
@@ -53,12 +51,12 @@ jobs:
             curl -H "Accept-Encoding: gzip" $i | gunzip | more  >> ad_filter.txt
           done
           
-          # 创建publish文件夹
+          echo "创建publish文件夹"
           mkdir -p publish;
 
           # 替换删除
-          sed -i "s/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ;" > ./publish/adblock.txt
-          sed -i "s/127.0.0.1/0.0.0.0/g ; s/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ;" > ./publish/hosts.txt
+          sed -i "s/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ;" dns_hosts.txt > ./publish/adblock.txt
+          sed -i "s/127.0.0.1/0.0.0.0/g ; s/\s\+/ /g ; s/^[ \t]*//g ; s/[ \t]*$//g ;" ad_filter.txt > ./publish/hosts.txt
           
       - name: Git push to release
         run: |
