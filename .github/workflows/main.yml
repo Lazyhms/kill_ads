@@ -59,8 +59,8 @@ jobs:
           mkdir -p publish;
           
           # 排序去重
-          mv -f dns_hosts.txt /publish/hosts.txt
-          mv -f ad_filter.txt /publish/adblock.txt
+          mv -f dns_hosts.txt ./publish/hosts.txt
+          mv -f ad_filter.txt ./publish/adblock.txt
 
       - name: Git push to release
         run: |
